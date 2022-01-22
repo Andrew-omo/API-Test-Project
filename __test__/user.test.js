@@ -182,7 +182,7 @@ describe('Negative Test', ()=>{
   .send(createUsers)
   console.log(response.body)
   expect(response.status).toBe(401);
-  expect(response.body.data.message).toEqual('Authentication failed');
+  expect(response.body.message).toEqual('Authentication failed');
    
  });
 
