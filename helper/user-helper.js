@@ -1,21 +1,23 @@
 const faker = require('faker');
+const randomNumber = Math.floor(Math.random() * 999);
+const randomName = faker.name.findName();
 
 
 export const createUsers = {
-    email:`testemail-${Math.floor(Math.random() * 999)}@yahoo.com`,
-    name:faker.name.findName(),
+    email:`testemail-${randomNumber}@yahoo.com`,
+    name:randomName,
     gender:"male",
     status:"active",  
 };
 
 export const updateUsers = {
-    email:`testemail-${Math.floor(Math.random() * 999)}@yahoo.com`,
+    email:`testemail-${randomNumber}@yahoo.com`,
     gender:"female",
     
 };
 
 export const patchUsers = {
-    name:faker.name.findName(),
+    name:randomName,
     status:"inactive",
     
 };
@@ -23,8 +25,8 @@ export const patchUsers = {
 export const invalidUserInputData =  {
 
 data: {
-    name: 'Inez Larkin I',
-    email: 'testemail-647@yahoo.com',
+    email: `testemail-${randomNumber}@yahoo.com`,
+    name: randomName,
     gender: 'male',
     status: 'active'
   }
