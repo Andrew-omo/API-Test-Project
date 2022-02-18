@@ -182,8 +182,7 @@ describe('Negative Test', ()=>{
   .send(createUsers)
   console.log(response.body)
   expect(response.status).toBe(401);
-  expect(response.body.message).toEqual('Authentication failed');
-   
+  
  });
 
  it('422/ Data validation failed',async()=>{
