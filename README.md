@@ -3,7 +3,7 @@
 This project is an API test automation project for Kainos Functional and Automation capability. It is written in JavaScript and Jest.
 
 
-### Getting Started
+### Getting Started [Prerequisites]
 
 
 #### Install Node.Js
@@ -69,14 +69,6 @@ For this specific Babel setup, I have chosen to use the ` @babel/preset-env plug
   }
 ``
 
-#### Install Faker 
-[Faker] Is an npm module whose sole purpose is to produce massive, well-organized, realistic fake data for testing applications. `npm install faker`
-- Visit page: https://www.npmjs.com/package/faker
-
-**Note** Use previous version `npm install faker@5.5.3`
-
-
-
 #### install dotevn 
 [DotEnv] Is a lightweight npm package that automatically loads environment variables from a . env file into the process. env object. To use dotenv, first install it using the command: `npm i dotenv` Then in your app, require and configure the package like this: `require('dotenv')`
 
@@ -85,6 +77,16 @@ For this specific Babel setup, I have chosen to use the ` @babel/preset-env plug
 
 **Note** Create an `.env` file at the root of the project and add Authorization `TOKEN`
 - USER_TOKEN=xxxxxa11b59502a4676b4241da8de76dcfbf05xxxxxx
+
+
+### Setup
+In this section we will discuss how you can generate random test data in your test, clone your test, run your test & generate test report.
+
+#### Install Faker 
+[Faker] Is an npm module whose sole purpose is to produce massive, well-organized, realistic fake data for testing applications. `npm install faker`
+- Visit page: https://www.npmjs.com/package/faker
+
+**Note** Use previous version `npm install faker@5.5.3`
 
 
 #### [GithubRepo] To clone the repo locally
@@ -104,6 +106,32 @@ For this specific Babel setup, I have chosen to use the ` @babel/preset-env plug
 
 - `npm test`
 
+
+#### Install jest-html-reporter
+Jest test result processor is for generating a test summary report in HTML. `npm install jest-html-reporters --save-dav`
+- Visite page: https://www.npmjs.com/package/jest-html-reporters
+
+**Note** Add the following section to your package.json:
+
+
+``
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "jest":{
+    "reporters":[
+      "default",[
+        "jest-html-reporters",{
+          "publicPath": "jest-report",
+          "filename": "jest_html_reporters.html",
+          "openReport": true
+        }
+      ]
+    ]
+
+  }
+``
 
 
 #### GoRestAPI Documentation
